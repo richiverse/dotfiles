@@ -29,6 +29,11 @@ echo 'installing git - version control'
 sudo apt-get install git -y
 sudo apt-get update
 
+echo 'installing gnome-keyring'
+sudo apt-get install libgnome-keyring-dev -y
+cd /usr/share/doc/git/contrib/credential/gnome-keyring
+sudo make
+git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 echo 'start zsh -  when prompted enter 2'
 zsh
