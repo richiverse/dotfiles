@@ -1,0 +1,5 @@
+export PATH=$HOME/anaconda/bin:$PATH
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+" . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh

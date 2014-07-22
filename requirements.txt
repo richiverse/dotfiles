@@ -1,0 +1,11 @@
+virtualenvwrapper
+tox
+py.test
+coverage
+pylint
+autopep8
+pylama
+ipdb
+httpie
+fabric
+cytoolz
