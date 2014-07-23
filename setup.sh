@@ -89,7 +89,15 @@ cd ~/Downloads
 echo 'cleaning up fonts'
 rm -rf SourceCodePro_*
 
-echo 'configue vim'
-
 echo 'install pip packages'
 pip install -U -r requirements.txt
+
+echo 'make symbolic links'
+cd $HOME
+if [ -d ./dotfiles/ ]; then
+    mv dotfiles dotfiles.old
+fi
+ln -sb ./dotfiles/.tmux.conf .
+ln -sb ./dotfiles/.zshrc .
+ln -sb ./dotfiles/.vimrc .
+ln -sb ./dotfiles/.gitconfig .
