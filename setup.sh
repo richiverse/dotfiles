@@ -9,20 +9,16 @@ sudo apt-get update
 
 echo 'installing tmux - better terminal control'
 sudo apt-get install -y tmux 
-touch ~/.tmux.conf
 sudo apt-get install xclip
 
 echo 'installing zsh - a better command line'
 sudo apt-get install -y zsh 
 
 echo 'installing vim - best editor'
-sudo apt-get install vim -y
-
-echo 'installing git - version control'
-sudo apt-get update
+sudo apt-get install -y vim 
 
 echo 'installing gnome-keyring'
-sudo apt-get install libgnome-keyring-dev -y
+sudo apt-get install -y libgnome-keyring-dev
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
 sudo make
 git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
@@ -40,17 +36,15 @@ done
 echo 'set zsh as your default shell'
 chsh -s /bin/zsh
 
-
 echo 'install vundle plus bundles'
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cat vundlebuild >> ~/.vimrc
 
 echo 'install all plugins'
 vim +PluginInstall +qall
 
 echo 'compile YCM portion'
-sudo apt-get install build-essential cmake -y
-sudo apt-get install python-dev -y
+sudo apt-get install -y build-essential cmake
+sudo apt-get install -y python-dev
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer --omnisharp-completer
 
@@ -62,7 +56,6 @@ bash ./Anaconda-2.0.1-Linux-x86_64.sh -b
 echo 'cleanup'
 rm ./Anaconda-2.0.1-Linux-x86_64.sh
 echo 'add anaconda to path'
-cat ~/Build/zshbuild >> ~/.zshrc
 source ~/.zshrc
 conda update conda
 conda update anaconda
@@ -72,12 +65,13 @@ echo 'install powerline'
 pip install --user git+https://github.com/Lokaltog/powerline
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
-mkdir ~/.fonts 
-mkdir ~/.fonts.conf.d
-mv PowerlineSymbols.otf ~/.fonts/
+mkdir -p ~/.fonts 
+mkdir -p ~/.fonts.conf.d
+mv ./PowerlineSymbols.otf ~/.fonts/
 fc-cache -vf ~/.fonts
-mv 10-powerline-symbols.conf ~/.fonts.conf.d
-sudo apt-get install python-fontforge -y
+mv ./10-powerline-symbols.conf ~/.fonts.conf.d
+sudo apt-get install -y python-fontforge
+mkdir -p ~/github
 cd ~/github
 git clone https://github.com/Lokaltog/powerline-fonts
 
@@ -86,18 +80,16 @@ echo 'install source code pro'
 cd ~/Downloads
 wget http://sourceforge.net/projects/sourcecodepro.adobe/files/SourceCodePro_FontsOnly-1.017.zip
 unzip SourceCodePro_FontsOnly-1.017.zip
-cd SourceCodePro_FontsOnly-1.017/OTF
+cd ./SourceCodePro_FontsOnly-1.017/OTF
 mv *.otf ~/.fonts
 cd ../TTF
 mv *.ttf ~/.fonts
 sudo fc-cache
 cd ~/Downloads
+echo 'cleaning up fonts'
 rm -rf SourceCodePro_*
-echo 'set guifont=Source\ Code\ Pro\ 12' >> ~/.vimrc
-echo 'set guifont=Source\ Code\ Pro\ 12' >> ~/.zshrc
 
 echo 'configue vim'
-cat vimbuild >> ~/.vimrc
 
 echo 'install pip packages'
 pip install -U -r requirements.txt

@@ -1,3 +1,4 @@
+set guifont=Source\ Code\ Pro\ 12
 export PATH=$HOME/anaconda/bin:$PATH
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
