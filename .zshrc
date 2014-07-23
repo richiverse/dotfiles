@@ -1,7 +1,7 @@
-set guifont=Source\ Code\ Pro\ 12
 export VRDP_AUTH_PAM_SERVICE="vrdpauth"
+PATH="$PATH:$HOME/anaconda/bin"
 
-export PATH=$HOME/anaconda/bin:$PATH
+set guifont="Source\ Code\ Pro\ 12"
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
@@ -15,7 +15,11 @@ alias lst='ls -hAtlr'
 
 # Git aliases
 alias gs='git status'
-alias gc='git commit -m '
+alias gc="git commit -m '$1'"
 alias ga='git add --all .'
 alias push='git push -u origin master'
 alias pull='git pull'
+
+# Conda aliases
+alias sa= 'source activate $1'
+alias sd= 'source deactivate'

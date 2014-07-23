@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set guifont=Source\ Code\ Pro\ 12
+set guifont="Source\ Code\ Pro\ 12"
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -40,4 +40,12 @@ filetype plugin indent on    " required
 " set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
+syntax enable
+set background=light
+colorscheme solarized
 
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
