@@ -1,4 +1,0 @@
-" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set encoding=utf-8
-set fillchars+=stl:\ ,stlnc:\
-
