@@ -15,7 +15,7 @@ alias lst='ls -hAtlr'
 
 # Git aliases
 alias gs='git status'
-alias gc="git commit -m '$1'"
+alias gc="git commit -m "
 alias ga='git add --all .'
 alias push='git push -u origin master'
 alias pull='git pull'
