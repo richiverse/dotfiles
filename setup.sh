@@ -1,32 +1,24 @@
 #!/bin/sh
 
-cd ~
-echo 'create Projects folder'
-mkdir -p ~/Projects
-mkdir -p ~/Build
-mkdir -p ~/github
-cd ~/Build
-touch ./README
-touch ./LICENSE
+cd $HOME
+sudo apt-get install -y git
+git clone https://github.com/richiverse/dotfiles.git
 
 echo 'install apps'
 sudo apt-get update
 
-echo 'installing zsh - a better command line'
-sudo apt-get install zsh -y
-
 echo 'installing tmux - better terminal control'
-sudo apt-get install tmux -y
+sudo apt-get install -y tmux 
 touch ~/.tmux.conf
 sudo apt-get install xclip
-cat ~/Build/tmuxbuild >> ~/.tmux.conf
-source ~/.tmux.conf
+
+echo 'installing zsh - a better command line'
+sudo apt-get install -y zsh 
 
 echo 'installing vim - best editor'
 sudo apt-get install vim -y
 
 echo 'installing git - version control'
-sudo apt-get install git -y
 sudo apt-get update
 
 echo 'installing gnome-keyring'
