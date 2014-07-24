@@ -20,6 +20,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'klen/python-mode'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 
@@ -43,9 +44,17 @@ set fillchars+=stl:\ ,stlnc:\
 syntax enable
 set background=light
 colorscheme solarized
+set t_Co=256
+let g:solarized_termcolors = 256
 
 if has('gui_running')
     set background=light
 else
     set background=dark
 endif
+
+" python-mode settings
+let g:pymode_folding = 0
+let g:pyFlakes_use_quickfix = 0
+let g:pymode_lint_checkers = ['pylint', 'pyflakes', 'pep8', 'mccabe', 'pep257']
+
