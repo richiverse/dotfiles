@@ -18,7 +18,7 @@ alias lst='ls -hAtlr'
 alias gs='git status'
 alias gc="git commit -m "
 alias ga='git add --all .'
-alias push='git push -u origin master'
+alias push='git push'
 alias pull='git pull'
 
 # Conda aliases
