@@ -15,6 +15,8 @@ alias lsd='ls -hdl'
 alias lst='ls -hAtlr'
 alias getip='ifconfig | grep -E "Bcast" | cut -d ":" -f2 | cut -d " " -f1'
 
+#app aliases
+alias chrome='google-chrome-stable'
 
 # Git aliases
 alias gs='git status'
