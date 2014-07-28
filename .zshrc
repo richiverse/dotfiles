@@ -5,7 +5,7 @@ export VISUAL=/usr/bin/vim
 
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+[[ -z "$TMUX" ]] && exec tmux -2
 # powerline settings
 # . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 

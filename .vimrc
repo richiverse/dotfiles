@@ -11,6 +11,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'kien/ctrlp.vim'
@@ -43,14 +44,13 @@ set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
 syntax enable
 set background=light
-colorscheme solarized
-set t_Co=256
 let g:solarized_termcolors = 256
+colorscheme solarized
 
 if has('gui_running')
     set background=light
 else
-    set background=dark
+    set background=light
 endif
 
 " python-mode settings
