@@ -13,6 +13,8 @@ export VISUAL=/usr/bin/vim
 alias lsa='ls -hAl'
 alias lsd='ls -hdl'
 alias lst='ls -hAtlr'
+alias getip='ifconfig | grep -E "Bcast" | cut -d ":" -f2 | cut -d " " -f1'
+
 
 # Git aliases
 alias gs='git status'
