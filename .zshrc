@@ -21,7 +21,7 @@ alias chrome='google-chrome-stable'
 # Git aliases
 alias gs='git status'
 alias gc="git commit -m "
-alias ga='git add --all .'
+alias ga='git add --all . && git diff'
 alias push='git push'
 alias pull='git pull'
 
