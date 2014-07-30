@@ -17,6 +17,9 @@ sudo apt-get install -y zsh
 echo 'installing vim - best editor'
 sudo apt-get install -y vim 
 
+echo 'installing i3 - window manager'
+sudo apt-get intstall -y i3-wm
+
 echo 'installing gnome-keyring'
 sudo apt-get install -y libgnome-keyring-dev
 cd /usr/share/doc/git/contrib/credential/gnome-keyring
