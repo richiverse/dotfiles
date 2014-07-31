@@ -14,6 +14,8 @@ alias lsa='ls -hAl'
 alias lsd='ls -hdl'
 alias lst='ls -hAtlr'
 alias getip='ifconfig | grep -E "Bcast" | cut -d ":" -f2 | cut -d " " -f1'
+alias python='~/anaconda/bin/python'
+alias ipython='~/anaconda/bin/ipython'
 
 #app aliases
 alias chrome='google-chrome-stable'
@@ -21,7 +23,7 @@ alias chrome='google-chrome-stable'
 # Git aliases
 alias gs='git status'
 alias gc="git commit -m "
-alias ga='git add --all . && git diff'
+alias ga='git add --all .'
 alias push='git push'
 alias pull='git pull'
 
