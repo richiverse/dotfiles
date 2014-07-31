@@ -13,7 +13,12 @@
 	editor = vim
 [diff]
     tool = vimdiff
-[merge]
-    tool = vimdiff
-[difftool]
+    diff-algorithm = patience
+[difftool "sourcetree"]
     prompt = false
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+    tool = vimdiff
