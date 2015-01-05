@@ -10,7 +10,7 @@
 [color]
 	ui = true
 [core]
-	editor = vim
+	editor = /home/rich/src/vim74/bin/vim
 [diff]
     tool = vimdiff
     diff-algorithm = patience
