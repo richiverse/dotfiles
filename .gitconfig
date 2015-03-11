@@ -22,3 +22,8 @@
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
     tool = vimdiff
+[github]
+	user = richiverse
+[ghi]
+	token = ac19a060e4900694ab11bf8edfd475dbb1fbb415
+	editor = vim
