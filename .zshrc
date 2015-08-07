@@ -5,10 +5,10 @@ export VISUAL=$HOME/src/vim74/bin/vim
 export TDSVER=7.2
 export TDSDUMP=/tmp/freetds.log
 export MAIL=/var/spool/mail/rich
-
+export TERM=screen-256color
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux -2
+[[ -z "$TMUX" ]] && exec  tmux -2
 # powerline settings
 # . ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh
 
@@ -23,6 +23,7 @@ alias vpython='./venv/bin/python'
 
 #app aliases
 alias chrome='google-chrome-stable'
+alias wepy='~/src/wepy/we.py brooklyn'
 
 # Git aliases
 alias gs='git status'
@@ -38,16 +39,17 @@ alias sa='source activate '
 alias sd='source deactivate'
 
 alias venv='. ./venv/bin/activate'
-alias vpn='sudo openvpn --config ~/.config/openvpn/client.ovpn'
+alias vpn='sudo ~/src/clockworkmod/Tether/linux/run.sh;'
 alias pay='cd ~/Projects/github/payrollscripts/; venv;'
 alias ipn='ipython notebook'
 alias fot='cd ~/Projects/github/front_office_tools/; venv;'
 alias ndc='cd ~/Projects/github/ndc/; venv;'
 alias met='cd ~/Projects/github/influx-metrics/; venv;'
 alias api='cd ~/Projects/github/scripts/python-client/; venv;'
-alias vim='$HOME/src/vim74/bin/vim'
+alias vim='/usr/bin/vim'
 alias toclp='xclip -sel clip'
-alias issuesp='ghi list -U && ghi list -U edisgreat && ghi list -L "F: Import"'
+alias issuesp='ghi list -U && ghi list -U edisgreat && ghi list -L "G: Import"'
+
 source ~/.autoenv/activate.sh
 source ~/src/zsh-git-prompt/zshrc.sh
 PROMPT='%B%m%~%b$(git_super_status) %# '
@@ -58,3 +60,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+eval `dircolors ~/.solarized/dircolors-solarized/dircolors.256dark`

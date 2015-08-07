@@ -34,6 +34,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'kien/ctrlp.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'sjl/gundo.vim'
+Plugin 'troydm/shellasync.vim'
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
@@ -43,8 +45,10 @@ Plugin 'klen/python-mode'
 Plugin 'ivanov/vim-ipython'
 Plugin 'tshirtman/vim-cython'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'chase/vim-ansible-yaml'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
+Plugin 'mitsuhiko/vim-jinja'
 Plugin 'majutsushi/tagbar'
 
 
@@ -61,21 +65,22 @@ set incsearch
 set hlsearch
 set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
+set t_Co=256
+set term=screen-256color
 syntax on
 
 set mouse=a
 
 syntax enable
-
-if strftime("%H") < 16 && strftime("%H") > 7
-  colorscheme solarized
+let g:solarized_termcolors=256
+if strftime("%H") < 17 && strftime("%H") > 6
   set background=light
 else
-  colorscheme solarized
   set background=dark
 endif
 
-let g:solarized_termcolors = 256
+colorscheme solarized
+call togglebg#map("<F4>")
 
 set laststatus=2
 " Show PASTE if in paste mode
@@ -127,7 +132,9 @@ augroup mydelimitMate
 augroup END
 
 " python-mode settings
+let g:pymode_rope = 0 
 let g:pymode_folding = 0
+let g:pymode_python = 'python3'
 let g:pyFlakes_use_quickfix = 0
 let g:pymode_lint_checkers = ['pylint', 'pyflakes', 'pep8', 'mccabe', 'pep257']
 
