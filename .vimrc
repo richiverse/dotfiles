@@ -73,7 +73,7 @@ set mouse=a
 
 syntax enable
 let g:solarized_termcolors=256
-if strftime("%H") < 17 && strftime("%H") > 6
+if strftime("%-l:%M %P") > $SUNRISE  && strftime("%-l:%M %P") < $SUNSET
   set background=light
 else
   set background=dark

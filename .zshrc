@@ -6,6 +6,8 @@ export TDSVER=7.2
 export TDSDUMP=/tmp/freetds.log
 export MAIL=/var/spool/mail/rich
 export TERM=screen-256color
+export SUNRISE="$(curl -s "http://weather.yahooapis.com/forecastrss?p=USNY0996&u=f"| grep astronomy | awk -F\" '{print $2;}')"
+export SUNSET="$(curl -s "http://weather.yahooapis.com/forecastrss?p=USNY0996&u=f" | grep astronomy | awk -F\" '{print $4;}')"
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec  tmux -2
